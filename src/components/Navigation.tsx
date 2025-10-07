@@ -1,8 +1,13 @@
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { Briefcase, CodeXml, FileText, Home } from "lucide-react";
+import {
+  Briefcase,
+  CodeXml,
+  FileText,
+  GraduationCap,
+  Home,
+} from "lucide-react";
 import type React from "react";
 import { AnimatedThemeToggler } from "./magicui/animated-theme-toggler";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -19,41 +24,39 @@ const icons: IconsMenuProps[] = [
   { icon: <Home />, key: "home", separator: true, href: "#home" },
   { icon: <FileText />, key: "about", href: "#about" },
   { icon: <CodeXml />, key: "skills", href: "#skills" },
+  { icon: <Briefcase />, key: "experience", href: "#experience" },
   {
-    icon: <Briefcase />,
-    key: "experience",
+    icon: <GraduationCap />,
+    key: "education",
     separator: true,
-    href: "#experience",
+    href: "#education",
   },
   { icon: <AnimatedThemeToggler />, key: "theme" },
 ];
 
-export default function Navigation() {
-  const [currentHash, setCurrentHash] = useState<string>(window.location.hash);
+interface NavigationProps {
+  activeSection: string | null;
+}
 
-  useEffect(() => {
-    const onHashChange = () => setCurrentHash(window.location.hash);
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
+export default function Navigation({ activeSection }: NavigationProps) {
+  const currentHash = activeSection ? `#${activeSection}` : "#home";
 
   return (
     <motion.div
-      className="fixed bottom-1 left-0 right-0 flex justify-center"
+      className="fixed bottom-1 left-0 right-0 flex justify-center z-50"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
     >
       <Dock direction="middle" className="space-x-2">
         {icons.map((item, idx) => (
-          <>
+          <div key={item.key} className="flex items-center">
             <DockIcon
-              onClick={item.onClick}
               magnification={2}
               className={`rounded-full transition-colors duration-300 ${
-                item.href && currentHash === item.href
-                  ? "bg-secondary"
-                  : "hover:bg-secondary"
+                item.href && item.href === currentHash
+                  ? "bg-secondary text-primary"
+                  : "hover:bg-secondary/80"
               }`}
             >
               {item.href || item.onClick ? (
@@ -71,10 +74,10 @@ export default function Navigation() {
 
             {item.separator && idx < icons.length - 1 && (
               <DockIcon magnification={0}>
-                <span className="w-px h-4 bg-gray-400 block" />
+                <span className="w-px h-4 bg-gray-400/50 block" />
               </DockIcon>
             )}
-          </>
+          </div>
         ))}
       </Dock>
     </motion.div>

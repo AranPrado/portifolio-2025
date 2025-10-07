@@ -1,4 +1,5 @@
 import TitleText from "./TitleText";
+import info from "../InfoJson.json";
 
 export default function About() {
   return (
@@ -8,27 +9,17 @@ export default function About() {
           <div className="mb-4">
             <TitleText text="Sobre mim" />
           </div>
-          <p className=" leading-relaxed">
-            Olá! Meu nome é <span className="text-blue-400">Aran</span>, sou
-            desenvolvedor front-end com paixão por criar experiências digitais
-            envolventes e funcionais. Tenho experiência no desenvolvimento de
-            interfaces modernas, responsivas e acessíveis, sempre buscando unir
-            design e performance.
-          </p>
-          <p className=" leading-relaxed mt-4">
-            Nos últimos tempos venho expandindo meus conhecimentos para além do
-            front-end, explorando áreas como back-end, arquitetura de sistemas e
-            serviços em nuvem. Meu objetivo é me tornar um desenvolvedor cada
-            vez mais completo, capaz de entregar soluções robustas de ponta a
-            ponta. 🚀
-          </p>
+          <p className=" leading-relaxed">{info.aboutMe.text}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-6">
-          <ModalComponent textOne="+2" textTwo="Anos de Experiência" />
-          <ModalComponent textOne="+15" textTwo="Projetos Concluídos" />
-          <ModalComponent textOne="100%" textTwo="Foco em Qualidade" />
-          <ModalComponent textOne="∞" textTwo="Vontade de Aprender" />
+          {info.aboutMe.cards.map((card, index) => (
+            <ModalComponent
+              key={index}
+              textOne={card.title}
+              textTwo={card.subtitle}
+            />
+          ))}
         </div>
       </div>
     </section>

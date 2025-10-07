@@ -1,5 +1,7 @@
 import { Card } from "./ui/card";
 import { Progress } from "./ui/progress";
+import * as LucideIcons from "lucide-react";
+import { type LucideProps } from "lucide-react";
 
 interface Skill {
   name: string;
@@ -7,16 +9,24 @@ interface Skill {
 }
 
 interface CardSkillsProps {
-  title: string; // Ex: "Front-end"
+  title: string;
   skills: Skill[];
-  icon: React.ReactNode; // Ex: <Code2 size={20} />
+  icon: string;
 }
 
 export default function CardSkills({ title, skills, icon }: CardSkillsProps) {
+  const IconComponent = (
+    LucideIcons as unknown as Record<string, React.ComponentType<LucideProps>>
+  )[icon];
+
   return (
     <Card className="p-6 flex flex-col gap-4">
       <div className="flex items-center gap-2">
-        {icon}
+        {IconComponent ? (
+          <IconComponent className="w-6 h-6" />
+        ) : (
+          <div className="w-6 h-6 bg-gray-300 rounded-sm" />
+        )}
         <h3 className="text-lg font-semibold">{title}</h3>
       </div>
 

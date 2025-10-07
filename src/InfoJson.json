@@ -1,0 +1,138 @@
+{
+  "name": "Aran",
+  "fullName": "Aran Prado Dos Santos Amaral",
+  "role": "Desenvolvedor Full Stack",
+  "initialPhrase": "Apaixonado por tecnologia,interfaces criativas e experiências digitais que unem design e performance. Sempre em busca de aprender e inovar.",
+  "linkedin": "https://www.linkedin.com/in/aran-prado/",
+  "github": "https://github.com/aranprado/",
+  "email": "aranpradodev@gmail.com",
+  "phone": "(27) 99264-8425",
+  "aboutMe": {
+    "text": "Olá! Meu nome é Aran, sou desenvolvedor front-end com paixão por criar experiências digitais envolventes e funcionais. Tenho experiência no desenvolvimento de interfaces modernas, responsivas e acessíveis, sempre buscando unir design e performance. \nNos últimos tempos venho expandindo meus conhecimentos para além do front-end, explorando áreas como back-end, arquitetura de sistemas e serviços em nuvem. Meu objetivo é me tornar um desenvolvedor cada vez mais completo, capaz de entregar soluções robustas de ponta a ponta. 🚀",
+    "cards": [
+      {
+        "title": "+2",
+        "subtitle": "Anos de Experiência"
+      },
+      {
+        "title": "Diversos",
+        "subtitle": "Projetos Concluídos"
+      },
+      {
+        "title": "100%",
+        "subtitle": "Foco em Qualidade"
+      },
+      {
+        "title": "∞",
+        "subtitle": "Vontade de Aprender"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "title": "Front-End",
+      "icon": "MonitorSmartphone",
+      "skills": [
+        { "name": "React", "level": 90 },
+        { "name": "Next.js", "level": 60 },
+        { "name": "Zustand", "level": 90 },
+        { "name": "React Query", "level": 90 },
+        { "name": "Ant-desing", "level": 90 }
+      ]
+    },
+    {
+      "title": "Back-End",
+      "icon": "BringToFront",
+      "skills": [
+        { "name": "Node.js / Nest JS", "level": 80 },
+        { "name": "Dot net", "level": 50 }
+      ]
+    },
+    {
+      "title": "Cloud",
+      "icon": "Server",
+      "skills": [
+        { "name": "AWS", "level": 30 },
+        { "name": "Firebase", "level": 60 },
+        { "name": "Docker", "level": 50 }
+      ]
+    },
+    {
+      "title": "Database",
+      "icon": "Database",
+      "skills": [
+        { "name": "Postgres", "level": 50 },
+        { "name": "Mongodb", "level": 30 }
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Grupo Gmill",
+      "description": "No Grupo Gmill, atuo como Desenvolvedor Frontend, onde sou responsável por criar e otimizar interfaces de usuário utilizando React. Trabalho em estreita colaboração com designers e equipes de backend para garantir uma experiência de usuário fluida e responsiva. Além disso, implemento melhores práticas de desenvolvimento, garantindo que o código seja eficiente e escalável.",
+      "period": "Nov 2024 - Atual",
+      "role": "Desenvolvedor Frontend",
+      "current": true
+    },
+    {
+      "company": "Moveh",
+      "description": "Na Moveh, atuei no desenvolvimento completo de aplicativos utilizando React Native, abrangendo tanto a criação de interfaces quanto a lógica de negócio. Também participo do desenvolvimento e manutenção do painel administrativo, implementado com Angular",
+      "period": "Fev 2024 - Out 2024",
+      "role": "Desenvolvedor Mobile",
+      "current": false
+    },
+    {
+      "company": "Saul Martins",
+      "description": "Atuava na criação de componentes para o desenvolvimento do sistema, utilizando tecnologias como React, HTML, CSS, TypeScript e Styled Components. No desenvolvimento Back-End, trabalhava com ASP.NET 6 e Laravel, focando na criação de APIs Web.",
+      "period": "Mar 23 - Jan 2024",
+      "role": "Estagiário de TI",
+      "current": false
+    },
+    {
+      "company": "Móveis Simonneti",
+      "description": "Atuava no tratamento de notas no sistema, atendimento ao cliente, resolução diretamente ligada aos prestadores e conferências de relatórios solicitados.",
+      "period": "Ago 22 - Fev 2023",
+      "role": "Auxiliar Administrativo",
+      "current": false
+    }
+  ],
+  "education": {
+    "course": "Análise e desenvolvimento de sistemas",
+    "institution": "Estácio de Sá",
+    "period": "2022 - 2025",
+    "status": "Formado"
+  },
+  "projects": [
+    {
+      "title": "Agendify API",
+      "description": "API desenvolvida com o objetivo de oferecer uma plataforma completa de agendamento de serviços. Permite que prestadores sejam contratados e que clientes encontrem e agendem profissionais de forma prática e automatizada.",
+      "technologies": ["Nest.js", "Prisma", "PostgreSQL", "Jest"],
+      "link": "https://github.com/AranPrado/agendify"
+    },
+    {
+      "title": "Agendify APP",
+      "description": "Aplicativo mobile integrado à API do Agendify, criado para permitir que clientes interajam com prestadores, agendem serviços e acompanhem seus agendamentos em tempo real.",
+      "technologies": ["React Native"],
+      "link": "https://github.com/AranPrado/agendify-mobile"
+    },
+    {
+      "title": "FitFusion FRONT",
+      "description": "Interface web integrada à FitFusion API, desenvolvida para facilitar o controle de treinos, alunos e planos, oferecendo uma experiência moderna e responsiva.",
+      "technologies": ["Angular"],
+      "link": "https://github.com/AranPrado/FitFusion/tree/Front"
+    },
+    {
+      "title": "FitFusion BACK",
+      "description": "API desenvolvida para gerenciar os treinos, alunos e planos da FitFusion, permitindo uma gestão eficiente e eficaz dos dados.",
+      "technologies": ["Dot Net", "AutoMapper", "EntityFrameworkCore", "MySql"],
+      "link": "https://github.com/AranPrado/FitFusion"
+    },
+    {
+      "title": "Subscription Manager API",
+      "description": "API em desenvolvimento voltada para o gerenciamento de pagamentos recorrentes e assinaturas, com integração direta ao Stripe e foco em escalabilidade e segurança.",
+      "technologies": ["Nest.js", "Prisma", "PostgreSQL", "Stripe"],
+      "link": "https://github.com/AranPrado/subscription-manager",
+      "isUnderConstruction": true
+    }
+  ]
+}

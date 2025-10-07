@@ -12,10 +12,31 @@ import InitialContent from "./components/InitialContent";
 import About from "./components/About";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
+
+import Footer from "./components/Footer";
+import { useActiveSection } from "./utils/useActiveSection";
 
 function App() {
   const [finishTerminal, setFinishTerminal] = useState(false);
   const [newContent, setNewContent] = useState(false);
+
+  const sectionIds = [
+    "home",
+    "about",
+    "skills",
+    "experience",
+    "education",
+    "footer",
+  ];
+  const activeSection = useActiveSection(sectionIds);
+
+  useEffect(() => {
+    if (activeSection) {
+      window.history.replaceState(null, "", `#${activeSection}`);
+    }
+  }, [activeSection]);
 
   useEffect(() => {
     if (finishTerminal) {
@@ -68,9 +89,19 @@ function App() {
               <div id="skills">
                 <Skills />
               </div>
-              <div id="experience"></div>
+              <div id="experience">
+                <Experience />
+              </div>
+              <div id="education">
+                <Education />
+              </div>
             </main>
-            <Navigation />
+            <footer id="footer" className=" border-t border-border ">
+              <Footer />
+            </footer>
+            {activeSection !== "footer" && (
+              <Navigation activeSection={activeSection} />
+            )}
           </>
         )}
       </div>

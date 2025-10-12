@@ -43,7 +43,7 @@ export default function Navigation({ activeSection }: NavigationProps) {
 
   return (
     <motion.div
-      className="fixed bottom-1 left-0 right-0 flex justify-center z-50"
+      className="fixed bottom-1 left-0 right-0  justify-center z-50 hidden sm:flex"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}

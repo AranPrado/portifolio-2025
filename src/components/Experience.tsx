@@ -5,7 +5,7 @@ import info from "../InfoJson.json";
 
 export default function Experience() {
   return (
-    <section className="min-h-screen  ">
+    <section className="min-h-screen  mt-4 md:mt-0">
       <div>
         <div className="mb-4  w-full ">
           <TitleText text="Minhas Experiências" />

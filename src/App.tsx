@@ -14,6 +14,7 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Footer from "./components/Footer";
 import { useActiveSection } from "./utils/useActiveSection";
+import HamburgerMenu from "./components/HamburgerMenu";
 
 function App() {
   const [finishTerminal, setFinishTerminal] = useState(false);
@@ -84,7 +85,14 @@ function App() {
         </div>
       ) : (
         <>
-          <main className="w-6xl mx-auto min-h-screen">
+          <HamburgerMenu />
+          <main
+            className="
+    w-full max-w-6xl mx-auto min-h-screen
+    px-4 sm:px-6 md:px-8
+    flex flex-col
+  "
+          >
             <section id="home">
               <InitialContent />
             </section>

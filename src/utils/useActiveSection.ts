@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 
 export function useActiveSection(sectionIds: string[]) {
@@ -6,22 +7,33 @@ export function useActiveSection(sectionIds: string[]) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        let mostVisibleEntry: any | null = null;
+
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            if (
+              !mostVisibleEntry ||
+              entry.intersectionRatio > mostVisibleEntry.intersectionRatio
+            ) {
+              mostVisibleEntry = entry;
+            }
           }
         });
+
+        if (mostVisibleEntry) {
+          setActiveSection(mostVisibleEntry.target?.id);
+        }
       },
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.4, // 40% da seção visível ativa ela
+        threshold: Array.from({ length: 11 }, (_, i) => i / 10), // 0 → 1 com steps de 0.1
       }
     );
 
     sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
